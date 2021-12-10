@@ -1,0 +1,41 @@
+import org.micromanager.data.Coords;
+import org.micromanager.data.Image;
+import org.micromanager.data.Datastore;
+import org.micromanager.display.DisplayWindow;
+
+import mmcorej.TaggedImage;
+
+
+root = "test/";
+device = "Laser Trigger";
+property = "Duration3 (us)";
+
+nPts = 100;
+nFrame = 50;
+
+p = 0; // start pulse
+inc = 2; // increment
+
+print("Start acquisition");
+for(int i=0;i<nPts;i++){
+	p = p+inc;
+	mmc.setProperty(device, property, p);
+
+	acqName = "Beads_pulse_length_"+p;
+	Datastore store = mm.data().createMultipageTIFFDatastore(root+acqName, false, false);	
+	DisplayWindow display = mm.displays().createDisplay(store);
+	
+	print("Acquistion with pulse "+p);
+	for(int j=0;j<nFrame;j++){
+		mmc.snapImage();
+		TaggedImage tmp = mmc.getTaggedImage();
+		Image image = mm.data().convertTaggedImage(tmp);
+		image = image.copyAtCoords(image.getCoords().copy().time(j).build());
+
+		store.putImage(image);
+	}
+
+	store.close();
+	print(mmc.getProperty(device, property));
+}
+print("Done");

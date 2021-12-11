@@ -5,9 +5,9 @@ dependencies:
   - python=3.8
   - nb_conda
   - numpy
+  - scipy
   - matplotlib
   - pip
   - pip:
     - tifffile
     - read-roi
-    - plotnine

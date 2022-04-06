@@ -11,3 +11,5 @@ dependencies:
   - pip:
     - tifffile
     - read-roi
+    - wget
+    - zipfile

@@ -8,7 +8,16 @@
 
 ## Content
 
-This repository contains the analysis notebooks used for data quantification and figure generation in the MicroFPGA paper.
+This repository contains the analysis notebooks used for data quantification and figure generation in the MicroFPGA paper. It downloads the data from [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6518309.svg)](https://doi.org/10.5281/zenodo.6518309).
+
+To use the notebooks, you can create the following `conda` environment:
+
+``` bash
+conda env create --file=environment.yaml
+conda activate mufpga-analysis
+```
+
+An then start `jupyter notebook`.
 
 <!---
 

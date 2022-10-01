@@ -23,5 +23,3 @@ An then start `jupyter notebook`.
 ## Cite us
 Joran Deschamps, Christian Kieser, Philipp Hoess, Takahiro Deguchi, Jonas Ries, "MicroFPGA: an affordable FPGA platform for microscope control",
 bioRxiv 2022.06.07.495178.
-
-MicroFPGA was written by Joran Deschamps, EMBL (2020).

@@ -13,7 +13,7 @@ This repository contains the analysis notebooks used for data quantification and
 To use the notebooks, you can create the following `conda` environment:
 
 ``` bash
-conda env create --file=environment.yaml
+conda env create -f environment.yaml
 conda activate mufpga-analysis
 ```
 
